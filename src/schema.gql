@@ -1,0 +1,42 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Auth {
+  userId: String!
+  token: String!
+}
+
+type User {
+  _id: String!
+  email: String!
+  hash: String!
+  hashRerf: String
+  phone: String!
+  address: String!
+  city: String!
+  country: String!
+  document: String!
+  permissions: [String!]!
+  cart: String!
+  store: String!
+}
+
+type Order {
+  _id: String!
+  userId: User!
+}
+
+type Query {
+  getAll: Order!
+}
+
+type Mutation {
+  signIn(signinInput: signinInput!): Auth!
+  logOut: Auth!
+}
+
+input signinInput {
+  email: String!
+  password: String!
+}
